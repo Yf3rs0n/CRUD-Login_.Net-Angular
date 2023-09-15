@@ -1,0 +1,68 @@
+.container-2A {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+    padding: 10px; /* Añade un relleno para separar el contenido del borde */
+}
+
+.container-2A h1 {
+    flex-grow: 1; /* El <h1> ocupará el espacio restante en el contenedor */
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0;
+    color: #e71d73;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.container-2A button {
+    font-size: 14px;
+    border-radius: 15px;
+    background: #30b0d5;
+    color : white;
+}
+.input-wrapper {
+    position: relative;
+    width: 220px;
+    margin-left: auto;
+    padding-bottom: 9px; 
+
+}
+.input {
+    box-sizing: border-box;
+    padding-left: 11px;
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid #9b9b9b;
+    outline: none;
+    color: #9b9b9b;
+}
+.input-icon {
+    left: unset;
+    right: 25px;
+    color: #9b9b9b;
+    position: absolute;
+    width: 25px;
+    height: 16px;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+table{
+    width: 100%;
+    align-items: center;
+    border: 0.1px solid #9b9b9b;
+}
+table th {
+    font-size: 15px;
+    text-align: center;
+    background: #e71d73;
+    color: white;
+    
+}
+table td{
+    text-align: center;
+    border: 0.1px solid #9b9b9b;
+
+}
