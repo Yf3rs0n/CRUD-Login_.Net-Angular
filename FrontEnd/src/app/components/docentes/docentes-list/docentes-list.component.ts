@@ -44,4 +44,15 @@ export class DocentesListComponent implements OnInit{
 ngAfterViewInit(): void {
   this.dataDocente.paginator = this.paginator;
 }
+
+deleteDocente(identificacion:number){
+  this.docentesService.deleteDocente(identificacion)
+  .subscribe({
+    next:(data)=>{
+      console.log(data);
+      this.showDocentes();
+    },
+    error:(e)=>{}
+  });
+}
 }
