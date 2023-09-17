@@ -1,18 +1,28 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DocentesListComponent } from './components/docentes/docentes-list/docentes-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { HttpClientModule } from '@angular/common/http';
 
-//3.- To work with material table
+import { AppRoutingModule } from './app-routing.module';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+import {MatButtonModule} from '@angular/material/button';
+
+import {MatIconModule} from '@angular/material/icon';
+
+//- To work with material table
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { AddDocenteComponent } from './components/add-docente/add-docente.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { EditDocenteComponent } from './components/edit-docente/edit-docente.component';
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { AddDocenteComponent } from './components/docentes/add-docente/add-docente.component';
+import { EditDocenteComponent } from './components/docentes/edit-docente/edit-docente.component';
+import { DocentesListComponent } from './components/docentes/docentes-list/docentes-list.component';
 
 
 
@@ -25,11 +35,15 @@ import { EditDocenteComponent } from './components/edit-docente/edit-docente.com
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
+    MatIconModule,
     AppRoutingModule,
     HttpClientModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

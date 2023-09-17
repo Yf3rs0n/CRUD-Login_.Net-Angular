@@ -130,7 +130,7 @@ namespace BackEndAPI.Controllers
 
         }
         
-        [HttpDelete("{Identificacion}")]
+        [HttpDelete("{identificacion}")]
         public async Task<IActionResult> Delete(int Identificacion)
         {
             ResponseApi<bool> _response = new ResponseApi<bool>();

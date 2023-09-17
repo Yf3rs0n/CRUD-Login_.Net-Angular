@@ -26,9 +26,7 @@
     "typeRoots": [
       "node_modules/@types",
       "node_modules/@angular",
-      "node_modules/@angular/common/http",
-      "node_modules/@angular/material/table",
-      "node_modules/@angular/material/paginator"
+      "node_modules/@angular/common/http"
     ]
   },
   "angularCompilerOptions": {

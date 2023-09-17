@@ -32,5 +32,8 @@ export class DocentesService {
   updateDocente(request:Docente):Observable<ResponseApi>{
     return this.http.put<ResponseApi>(this.myApiUrl,request);
   }
+  deleteDocente(identificacion:number):Observable<ResponseApi>{
+    return this.http.delete<ResponseApi>(this.myApiUrl+'/'+identificacion);
+  }
 }
 

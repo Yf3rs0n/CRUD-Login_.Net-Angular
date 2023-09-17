@@ -1,0 +1,68 @@
+<div class="container my-5">
+    <div class="container-2A">
+        <h1 class="mb-3">Creación de Docentes</h1>
+    </div>
+        <form class="row g-4" [formGroup]="formDocente">
+            <div class="col-md-3">
+                <label class="form-label">Tipo Identificación</label>
+                <select class="form-select" formControlName="tipoIdentificacion" required>
+                    <option>CC</option>
+                    <option>CE</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Identificacion</label>
+                <input type="text" class="form-control" formControlName="identificacion" maxlength="10" required>
+                
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Nombres</label>
+                <input type="text" class="form-control" formControlName="nombres" required>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" formControlName="apellidos" required>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Correo Electronico</label>
+                <input type="text" class="form-control"  formControlName="correoElectronico" required>
+            </div>
+            <div class="col-md-3">
+                <label  class="form-label">Telefono Celular</label>
+                <input type="text" class="form-control"  formControlName="telefonoCelular" required>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Numero Contrato</label>
+                <input type="text" class="form-control"  formControlName="numeroContrato" required>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Ciudad Residencia</label>
+                <input type="text" class="form-control" formControlName="ciudadResidencia">
+            </div>
+            <div class="col-md-6">
+                <label  class="form-label">Escalafon Técnico</label>
+                <select class="form-select" formControlName="escalafonTecnico" required>
+                    <option>Técnico</option>
+                    <option>Tecnólogo</option>
+                    <option>Profesional</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Escalafon Técnico</label>
+                <select class="form-select" formControlName="escalafonExtension" required>
+                    <option>Técnico experiencia inferior 1 año</option>
+                    <option>Técnico experiencia superior 1 año</option>
+                    <option>Tecnólogo</option>
+                    <option>Profesional</option>
+                </select>
+            </div>
+            <!-- <button type="submit" class="btn">guardar</button> -->
+            <!-- <button color="primary" [disabled]="formDocente.invalid" (click)="addDocente()">guerdar</button> -->
+            <button type="submit" color="primary" (click)="addDocente()">guerdar</button>
+            <!-- <button class="btn">atras</button> -->
+            <!-- <div class="container-bottom">
+                <button type="submit" class="btn">atras</button>
+                <button class="btn">guardar</button>
+            </div> -->
+        </form>
+</div>

@@ -1,10 +1,15 @@
+.container {
+    margin-top: 0px;
+}
+
 .container-2A {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 100%;
     text-align: center;
     padding: 10px; /* Añade un relleno para separar el contenido del borde */
+    border-bottom: 1px solid #9b9b9b;
 }
 
 .container-2A h1 {
@@ -21,6 +26,8 @@
     border-radius: 15px;
     background: #30b0d5;
     color : white;
+    border: none;
+    
 }
 .input-wrapper {
     position: relative;
