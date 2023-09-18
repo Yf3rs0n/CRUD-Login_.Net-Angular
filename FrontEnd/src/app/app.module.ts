@@ -23,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AddDocenteComponent } from './components/docentes/add-docente/add-docente.component';
 import { EditDocenteComponent } from './components/docentes/edit-docente/edit-docente.component';
 import { DocentesListComponent } from './components/docentes/docentes-list/docentes-list.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -31,7 +32,8 @@ import { DocentesListComponent } from './components/docentes/docentes-list/docen
     DocentesListComponent,
     AddDocenteComponent,
     AppComponent,
-    EditDocenteComponent
+    EditDocenteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
