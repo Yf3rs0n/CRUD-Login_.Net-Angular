@@ -12,7 +12,7 @@ namespace BackEndAPI.Models
         public string CorreoElectronico { get; set; } = null!;
         public string TelefonoCelular { get; set; } = null!;
         public string NumeroContrato { get; set; } = null!;
-        public string? CiudadResidencia { get; set;}
+        public string? CiudadResidencia { get; set; }
         public string EscalafonTecnico { get; set; } = null!;
         public string EscalafonExtension { get; set; } = null!;
     }
