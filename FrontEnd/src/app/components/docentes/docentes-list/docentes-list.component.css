@@ -71,5 +71,10 @@ table th {
 table td{
     text-align: center;
     border: 0.1px solid #9b9b9b;
-
 }
+.mat-paginator {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    margin: 0 auto;
+} 

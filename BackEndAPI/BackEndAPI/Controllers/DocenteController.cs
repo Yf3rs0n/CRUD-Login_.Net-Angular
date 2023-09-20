@@ -3,6 +3,7 @@ using BackEndAPI.DTOs;
 using BackEndAPI.Models;
 using BackEndAPI.Services.Contract;
 using BackEndAPI.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,7 +25,7 @@ namespace BackEndAPI.Controllers
             _docenteService = docenteService;
             _mapper = mapper;
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -49,6 +50,7 @@ namespace BackEndAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
+        [Authorize]
         [HttpGet]
         [Route("{identificacion}")]
         public async Task<IActionResult> Get(int identificacion)
@@ -76,6 +78,8 @@ namespace BackEndAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Post(DocenteDTO request)
         {
@@ -105,7 +109,8 @@ namespace BackEndAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
-
+        
+        [Authorize]
         [HttpPut]
         public async Task<IActionResult> Put(DocenteDTO request)
         {
@@ -130,6 +135,7 @@ namespace BackEndAPI.Controllers
 
         }
         
+        [Authorize]
         [HttpDelete("{identificacion}")]
         public async Task<IActionResult> Delete(int Identificacion)
         {

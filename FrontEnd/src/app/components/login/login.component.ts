@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder,FormControl,FormGroup, Validators  } from '@angular/forms';
+import { FormBuilder,FormGroup, Validators  } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private toast: NgToastService
   ) { }
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -36,20 +38,22 @@ export class LoginComponent {
 
   onLogin() {
     if(this.loginForm.valid){
-      console.log(this.loginForm.value);
       this.auth.login(this.loginForm.value)
       .subscribe({
         next:(res)=>{
-          alert(res.msg);
+          // alert(res.msg);
           this.loginForm.reset();
-          this.router.navigate(['/docentes']);
+          this.auth.Crudtoken(res.token);
+          this.toast.success({detail:'Success',summary:"Bienvenido",duration:3000});
+          this.router.navigate(['docentes']);
         },
         error:(e)=>{
-          alert(e?.error.msg);
         }
       })
     }else{
+      this.toast.error({detail:'Error',summary:'Formulario invalido'});
       console.log('Formulario invalido');
+
     }
   }
 }

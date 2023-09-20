@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container my-5">
     <div class="container-2A">
         <h1 class="mb-3">Creación de Docentes</h1>
@@ -59,7 +60,10 @@
                 </select>
             </div>
             <!-- <button type="submit" class="btn">guardar</button> -->
-            <button color="primary" [disabled]="formDocente.invalid" (click)="updateDocente()">guerdar</button>
+            <div class="button-container">
+                <button mat-raised-button type="submit" routerLink="/docentes">atras</button>
+                <button mat-raised-button type="submit" [disabled]="formDocente.invalid" (click)="updateDocente()">guardar</button>
+            </div>
             <!-- <button class="btn">atras</button> -->
             <!-- <div class="container-bottom">
                 <button type="submit" class="btn">atras</button>
@@ -67,3 +71,4 @@
             </div> -->
         </form>
 </div>
+<router-outlet></router-outlet>
