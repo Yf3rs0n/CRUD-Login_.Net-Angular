@@ -67,3 +67,4 @@ D:\CRUD-Login_.Net-Angular\BackEndAPI\BackEndAPI\obj\Debug\net6.0\BackEndAPI.gen
 D:\CRUD-Login_.Net-Angular\BackEndAPI\BackEndAPI\obj\Debug\net6.0\ref\BackEndAPI.dll
 D:\CRUD-Login_.Net-Angular\BackEndAPI\BackEndAPI\bin\Debug\net6.0\AutoMapper.dll
 D:\CRUD-Login_.Net-Angular\BackEndAPI\BackEndAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\CRUD-Login_.Net-Angular\BackEndAPI\BackEndAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -1,0 +1,10 @@
+nav {
+    background: #e71d73;
+}
+
+nav a {
+    color: white;
+}
+.navbar-brand svg path{
+    background: white;
+}

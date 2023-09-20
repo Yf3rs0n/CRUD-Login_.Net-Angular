@@ -1,0 +1,71 @@
+.outer{
+    height: 100vh;
+}
+.panel-heading{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.panel-heading h3{
+    color: #e71d73;
+}
+#forget{
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.from-inline label{
+    padding-left: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.btn {
+    margin-top: 20px;
+    border-radius: 15px;
+    background: #e71d73;
+    border-color: #9b9b9b;
+}
+
+.panel{
+    min-height: 300px;
+    margin-top: 100px;
+    width: 300px;
+}
+.input-field{
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #e71d73;
+}
+.input-field.error{
+    border: 1px solid red;
+    color: red;
+}
+
+input[type='text'],
+input[type='password'] {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    background: none;
+}
+.fa-eye-slash.btn{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+}
+
+

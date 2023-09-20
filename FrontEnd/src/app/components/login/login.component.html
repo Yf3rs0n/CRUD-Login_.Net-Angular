@@ -1,0 +1,37 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-light">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Login</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="loginForm">
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <span class="p-2"><i class="bi bi-person"></i></span>
+                                    <input formControlName="usuario" type="text" placeholder="usuario">
+                                </div>
+                            </div>
+                            <small *ngIf="loginForm.controls['usuario'].dirty && loginForm.controls['usuario'].errors" class="text-danger">*Se requiere nombre de usuario</small>
+
+                            <div class="form-group pt-3">
+                                <div class="input-field">
+                                    <span class="p-2"><i class="bi bi-key"></i></span>
+                                    <input formControlName="contraseña" [type]="type" placeholder="contraseña">
+                                    <span (click)="hideShowPassword()"><i class="{{ eyeIcon }}"></i></span>
+                                </div>
+                            </div>
+                            <small *ngIf="loginForm.controls['contraseña'].dirty && loginForm.controls['contraseña'].errors" class="text-danger">*Se requiere contraseña</small>
+                            
+                            <button  (click)="onLogin()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<ng-toast></ng-toast>

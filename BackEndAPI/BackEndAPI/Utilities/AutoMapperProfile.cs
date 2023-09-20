@@ -12,7 +12,6 @@ namespace BackEndAPI.Utilities
         {
             //mapping
             #region Docente
-
             CreateMap<Docente, DocenteDTO>().ReverseMap()
                 .ForMember(destiny => 
                 destiny.Identificacion,opt => opt.MapFrom(source => source.Identificacion)

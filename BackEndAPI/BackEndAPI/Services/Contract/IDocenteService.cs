@@ -1,5 +1,4 @@
 ﻿using BackEndAPI.Models;
-
 namespace BackEndAPI.Services.Contract
 {
     public interface IDocenteService

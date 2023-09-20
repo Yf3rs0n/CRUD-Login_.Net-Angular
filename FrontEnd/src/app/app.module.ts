@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -23,7 +23,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AddDocenteComponent } from './components/docentes/add-docente/add-docente.component';
 import { EditDocenteComponent } from './components/docentes/edit-docente/edit-docente.component';
 import { DocentesListComponent } from './components/docentes/docentes-list/docentes-list.component';
-
+import { LoginComponent } from './components/login/login.component';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgToastModule } from 'ng-angular-popup';
 
 
 @NgModule({
@@ -31,7 +34,9 @@ import { DocentesListComponent } from './components/docentes/docentes-list/docen
     DocentesListComponent,
     AddDocenteComponent,
     AppComponent,
-    EditDocenteComponent
+    EditDocenteComponent,
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +48,14 @@ import { DocentesListComponent } from './components/docentes/docentes-list/docen
     MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgToastModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
