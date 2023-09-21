@@ -3,6 +3,7 @@ import { Docente } from 'src/app/models/docente.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { DocentesService } from 'src/app/services/docentes.service';
+import { NgToastService } from 'ng-angular-popup';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -21,7 +22,7 @@ export class DocentesListComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator ;
 
-  constructor(private docentesService: DocentesService) { }
+  constructor(private docentesService: DocentesService,private toast: NgToastService) { }
 
   applyFilter(event:Event){
     const filterValue =(event.target as HTMLInputElement).value;
@@ -49,7 +50,7 @@ deleteDocente(identificacion:number){
   this.docentesService.deleteDocente(identificacion)
   .subscribe({
     next:(data)=>{
-      console.log(data);
+      this.toast.success({detail:'Success',summary:"Docente eliminado exitosamente",duration:3000});
       this.showDocentes();
     },
     error:(e)=>{}

@@ -1,13 +1,11 @@
-.container {
-    margin-top: 50px;
-}
+
 
 .container-2A {
     display: flex;
     align-items: center;
     width: 100%;
     text-align: center;
-    padding: 1px; /* Añade un relleno para separar el contenido del borde */
+    padding: 4px; /* Añade un relleno para separar el contenido del borde */
 }
 
 .container-2A h1 {

@@ -41,7 +41,6 @@ export class LoginComponent {
       this.auth.login(this.loginForm.value)
       .subscribe({
         next:(res)=>{
-          // alert(res.msg);
           this.loginForm.reset();
           this.auth.Crudtoken(res.token);
           this.toast.success({detail:'Success',summary:"Bienvenido",duration:3000});
@@ -51,9 +50,7 @@ export class LoginComponent {
         }
       })
     }else{
-      this.toast.error({detail:'Error',summary:'Formulario invalido'});
-      console.log('Formulario invalido');
-
+      this.toast.error({detail:'Error',summary:'Verifique los datos ingresados'});
     }
   }
 }

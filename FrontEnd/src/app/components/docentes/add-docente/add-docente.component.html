@@ -1,9 +1,9 @@
 <app-navbar></app-navbar>
-<div class="container my-5">
+<div class="container my-8">
     <div class="container-2A">
-        <h1 class="mb-3">Creación de Docentes</h1>
+        <h1 class="mb-3">Creación de Docente</h1>
     </div>
-        <form class="row g-4" [formGroup]="formDocente">
+        <form class="row g-4  my-2" [formGroup]="formDocente">
             <div class="col-md-3">
                 <label class="form-label">Tipo Identificación</label>
                 <select class="form-select" formControlName="tipoIdentificacion" required>
@@ -49,7 +49,7 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <label class="form-label">Escalafon Técnico</label>
+                <label class="form-label">Escalafon Extensión</label>
                 <select class="form-select" formControlName="escalafonExtension" required>
                     <option>Técnico experiencia inferior 1 año</option>
                     <option>Técnico experiencia superior 1 año</option>
@@ -71,3 +71,5 @@
             </div> -->
         </form>
 </div>
+<router-outlet></router-outlet>
+<ng-toast></ng-toast>

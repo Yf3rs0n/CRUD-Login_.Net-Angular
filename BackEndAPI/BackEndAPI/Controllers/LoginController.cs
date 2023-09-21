@@ -1,5 +1,5 @@
-﻿using BackEndAPI.Models;
-using Microsoft.AspNetCore.Http;
+﻿using BackEndAPI.DTOs;
+using BackEndAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -21,7 +21,7 @@ namespace BackEndAPI.Controllers
         }
 
         [HttpPost("authenticate")]
-        public async Task<IActionResult> Authenticate([FromBody] Login logins)
+        public async Task<IActionResult> Authenticate([FromBody] LoginDTO logins)
         {
             if(logins == null)
                 return BadRequest();
@@ -30,24 +30,23 @@ namespace BackEndAPI.Controllers
             if (login == null)
                 return NotFound(new {Message = "Usuario o contraseña incorrectos" });
 
-            login.Token = CreateJwt(login);
+            logins.Token = CreateJwt(logins);
 
             return Ok(
                 new
                 {
-                    Token = login.Token,
+                    Token = logins.Token,
                     Message = "Usuario y contraseña correctos"
                 });
         }
 
-        private string CreateJwt(Login login)
+        private string? CreateJwt(LoginDTO logins)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes("Mi palabra secreta");
             var identity = new ClaimsIdentity(new Claim[]
             {
-                new Claim(ClaimTypes.Role, login.Role),
-                new Claim(ClaimTypes.Name, $"{login.Usuario}")
+                new Claim(ClaimTypes.Name, $"{logins.Usuario}")
             });
 
             var credentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256);
