@@ -50,6 +50,7 @@ namespace BackEndAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, _response);
             }
         }
+        
         [Authorize]
         [HttpGet]
         [Route("{identificacion}")]

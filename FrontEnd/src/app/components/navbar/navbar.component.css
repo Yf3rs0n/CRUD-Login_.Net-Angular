@@ -5,6 +5,6 @@ nav {
 nav a {
     color: white;
 }
-.navbar-brand svg path{
-    background: white;
+.logout{
+    cursor: pointer;
 }

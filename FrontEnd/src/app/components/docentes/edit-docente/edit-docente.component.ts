@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Docente } from 'src/app/models/docente.model';
 import { ResponseApi } from 'src/app/models/response-api';
 import { DocentesService } from 'src/app/services/docentes.service';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-edit-docente',
@@ -28,6 +29,7 @@ export class EditDocenteComponent implements OnInit{
 
   constructor(
     private route: ActivatedRoute,
+    private toast: NgToastService,
     private router: Router,
     private fb:FormBuilder,
     private docentesService: DocentesService){
@@ -36,9 +38,9 @@ export class EditDocenteComponent implements OnInit{
         tipoIdentificacion:['',Validators.required],
         nombres:['',Validators.required],
         apellidos:['',Validators.required],
-        correoElectronico:['',Validators.required],
+        correoElectronico:['',Validators.required,Validators.email],
         telefonoCelular:['',Validators.required],
-        numeroContrato:['',Validators.required],
+        numeroContrato:['',Validators.required,Validators.min(1)],
         ciudadResidencia:['',Validators.required],
         escalafonTecnico:['',Validators.required],
         escalafonExtension:['',Validators.required]
@@ -66,11 +68,12 @@ export class EditDocenteComponent implements OnInit{
       this.docentesService.updateDocente(this.formDocente.value)
       .subscribe({
         next:(data)=>{
-          console.log(data);
+          this.toast.success({detail:'Success',summary:"Docente actualizado exitosamente",duration:3000});
           this.router.navigate(['/docentes']);
         },
-        error:(e)=>{}
-        
+        error:(e)=>{
+          this.toast.error({detail:'Error',summary:'Error al actualizar el docente'});
+        }
       });
     }
 }  

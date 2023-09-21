@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavbarComponent {
   public usuario: string = '';
-  constructor(private router: Router, private auth: AuthService, private userService: UserService) {
+  constructor(private router: Router, private auth: AuthService, private userService: UserService,private toast: NgToastService) {
   }
 
   ngOnInit(){

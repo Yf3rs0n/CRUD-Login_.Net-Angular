@@ -45,12 +45,25 @@ namespace BackEndAPI.Utilities
                 )
                 ;
             #endregion
-
-
-
-
-
-
+            #region Login
+            CreateMap<Login, LoginDTO>().ReverseMap()
+                .ForMember(destiny =>
+                destiny.Id, opt => opt.MapFrom(source => source.Id)
+                )
+                .ForMember(destiny =>
+                destiny.Usuario, opt => opt.MapFrom(source => source.Usuario)
+                )
+                .ForMember(destiny =>
+                destiny.Contraseña, opt => opt.MapFrom(source => source.Contraseña)
+                )
+                .ForMember(destiny =>
+                destiny.Token, opt => opt.MapFrom(source => source.Token)
+                )
+                .ForMember(destiny =>
+                destiny.Role, opt => opt.MapFrom(source => source.Role)
+                )
+                ;
+            #endregion
         }
     }
 }
